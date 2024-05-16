@@ -1,6 +1,7 @@
 package net.cody.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.cody.tutorialmod.item.ModCreativeModTabs;
 import net.cody.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,7 +30,7 @@ public class TutorialMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
-
+        ModCreativeModTabs.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -54,6 +55,7 @@ public class TutorialMod
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.ZIRCON);
+            event.accept(ModItems.RAW_ZIRCON);
         }
     }
 
