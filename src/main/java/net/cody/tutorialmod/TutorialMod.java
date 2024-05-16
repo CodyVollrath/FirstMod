@@ -1,6 +1,7 @@
 package net.cody.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.cody.tutorialmod.blocks.ModBlocks;
 import net.cody.tutorialmod.item.ModCreativeModTabs;
 import net.cody.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -29,7 +30,9 @@ public class TutorialMod
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
 
         // Register the commonSetup method for modloading
