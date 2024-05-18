@@ -1,6 +1,7 @@
 package net.cody.tutorialmod.item;
 
 import net.cody.tutorialmod.TutorialMod;
+import net.cody.tutorialmod.blocks.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +21,8 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.tutorial_tab")).displayItems((pParams, pOut) -> {
                         pOut.accept(ModItems.ZIRCON.get());
                         pOut.accept(ModItems.RAW_ZIRCON.get());
+                        pOut.accept(ModBlocks.ZIRCON_BLOCK.get());
+                        pOut.accept(ModBlocks.RAW_ZIRCON_BLOCK.get());
             }).build()
     );
     public static void register(IEventBus eventBus) {
